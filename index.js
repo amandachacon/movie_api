@@ -65,6 +65,20 @@ let topMovies = [
     },
 
   ];
+  
+  // GET requests
+  app.get('/', (req, res) => {
+    res.send('Welcome to my movie page!');
+  });
+  
+  app.get('/documentation', (req, res) => {                  
+    res.sendFile('public/documentation.html', { root: __dirname });
+  });
+  
+  app.get('/movies', (req, res) => {
+    res.json(topMovies);
+  });
+  
 //middleware 
 app.use (morgan('common')); 
 app.use(express.static('public')); 
