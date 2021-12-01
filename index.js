@@ -65,3 +65,15 @@ let topMovies = [
     },
 
   ];
+//middleware 
+app.use (morgan('common')); 
+app.use(express.static('public')); 
+  
+
+app.use((err, req, res, next) => {
+    console.error(err.stack); //logs errors
+    res.status(500).send('An error has been found!');
+    next();
+  });
+
+
