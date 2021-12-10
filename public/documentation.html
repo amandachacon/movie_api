@@ -1,12 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>RomCom Movie API</title>
 </head>
+
 <body>
     <h1>Amanda's RomCom Movie API</h1>
-   <p> This an API featuring Romantic Comedies. The API enables users to save their favorite RomComs and learn more about the movie, the director, and the lead actors. </p>
+    <p> This an API featuring Romantic Comedies. The API enables users to save their favorite RomComs and learn more
+        about the movie, the director, and the subgenre. </p>
+
+    <table>
+        <tr>
+            <th>Request</th>
+            <th>URL</th>
+            <th>Method</th>
+            <th>Request Data Format</th>
+            <th>Response Data Format</th>
+        </tr>
+        <tr>
+            <td>Show/list all movies.</td>
+            <td>/movies</td>
+            <td>GET</td>
+            <td>none</td>
+            <td>JSON object that holds data of all movies</td>
+        </tr>
+        <tr>
+            <td>Show details of a spesific movie.</td>
+            <td>/movies/[id]</td>
+            <td>GET</td>
+            <td>none</td>
+            <td>JSON object that holds details of specific movie. 
+                <code><br>
+                    {<br>
+                        title: '10 Things I Hate About You',<br>
+                        director: 'Gil Junger',<br>
+                        genre: ['Teen', 'High School', 'Shakespeare', 'Comedy', 'Wagering'],<br>
+                        releaseYear: 1999<br>
+                        }
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td>Show genre details</td>
+            <td>/movies/[genre]</td>
+            <td>GET</td>
+            <td>none</td>
+            <td>JSON object with genre details.</td>
+        </tr>
+        <tr>
+            <td>Show director details</td>
+            <td>/movies/[director]</td>
+            <td>GET</td>
+            <td>none</td>
+            <td>JSON object with director details.</td>
+        </tr>
+        <tr>
+            <td>Register a new user</td>
+            <td>/users</td>
+            <td>POST</td>
+            <td>JSON object <br>
+                <code>{ <br>
+                    username: <br>
+                }<br>
+                </code>
+            </td>
+            <td>JSON object that shows user that was added along with ID<br>
+                <code>
+                    {<br>
+                        id: 4<br>
+                        username: ilikemovies<br>
+                        favorties: <br>
+                    }<br>
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td>Change username</td>
+            <td>/users/[ID]</td>
+            <td>PUT</td>
+            <td>none</td>
+            <td>Response</td>
+        </tr>
+        <tr>
+            <td>Add a movie to "favorites" list</td>
+            <td>users/[ID]/favorites</td>
+            <td>PUT</td>
+            <td>none</td>
+            <td>Response</td>
+        </tr>
+        <tr>
+            <td>Remove movie from "favorites" list</td>
+            <td>users/[ID]/favorites</td>
+            <td>DELETE</td>
+            <td>none</td>
+            <td>Response</td>
+        </tr>
+        <tr>
+            <td>Delete user account. </td>
+            <td>/users/[ID]</td>
+            <td>DELETE</td>
+            <td>none</td>
+            <td>Response</td>
+        </tr>
+    </table>
 
 </body>
+
 </html>
